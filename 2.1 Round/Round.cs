@@ -8,7 +8,7 @@ using System.Text;
 использование данного круга.*/
 namespace _2._1_Round
 {
-    class Round
+    public class Round
     {
         private double _x;
         private double _y;
@@ -18,6 +18,10 @@ namespace _2._1_Round
         public Round(string name)
         {
             this.name = name;
+        }
+        public Round()
+        {
+            
         }
         public string name
         {
@@ -40,7 +44,7 @@ namespace _2._1_Round
             set { _radius = value; }
         }
 
-        public double roundLength(double radius)
+        public virtual double roundLength()
         {
             return 2 * 3.14 * radius;
         }
@@ -51,7 +55,7 @@ namespace _2._1_Round
 
         public override string ToString()
         {
-            return $"{this.name} coordinates = {this.x}, {this.y}; radius = {this.radius}, {Environment.NewLine}round length = {this.roundLength(this.radius).ToString("F2")}, round area = {this.area(this.radius)}";
+            return $"{this.name} coordinates = {this.x}, {this.y}; radius = {this.radius}, {Environment.NewLine}round length = {this.roundLength().ToString("F2")}, round area = {this.area(this.radius)}";
         }
     }
 }
