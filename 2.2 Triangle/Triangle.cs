@@ -5,6 +5,8 @@ using System.Linq;
 Написать класс Triangle, описывающий треугольник со сторонами a, b, c и позволяющий
 осуществить расчёт его площади и периметра. Написать программу, демонстрирующую
 использование данного треугольника.*/
+
+//сделать инкапсуляцию для сторон, количества и значений
 namespace _2._2_Triangle
 {
     class Triangle
@@ -19,7 +21,9 @@ namespace _2._2_Triangle
         public List<double> sides
         {
             get { return _sides; }
-            set { _sides = value; }
+            set { 
+                
+                _sides = value; }
         }
 
         public  Triangle(string name)

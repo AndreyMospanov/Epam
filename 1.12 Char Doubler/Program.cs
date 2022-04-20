@@ -16,7 +16,7 @@ namespace _1._12_Char_Doubler
         private static string CharDoubler(string data, string modifier)
         {
             StringBuilder sb = new StringBuilder();
-            List<char> modList = modifier.ToCharArray().ToList();
+            HashSet<char> modList = new HashSet<char>(modifier.ToArray());
             
             
             

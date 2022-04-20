@@ -8,6 +8,7 @@ namespace _2._2_Triangle
         {
             Triangle Treugolnik = new Triangle("Treugolnik");            
             Treugolnik.sides.AddRange( new double[] {3.0, 4.0, 5.0 });
+            Treugolnik.sides = null;
             Console.WriteLine(Treugolnik.ToString());
         }
     }

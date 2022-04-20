@@ -19,7 +19,7 @@ namespace _2._5_Employee
         {
             return DateTime.Now.Year - start;
         }
-        public Employee() : base()
+        public Employee() 
         {
             Console.WriteLine("Enter position");
             Position = Console.ReadLine();
