@@ -8,7 +8,8 @@ namespace _2._4_My_String
         {
             MyString ms = new MyString();
             MyString ms2 = new MyString();
-            Console.WriteLine($"Lets compare this myStrings. Is it Equal? {Environment.NewLine}{ms.Equals(ms2)}");
+            Console.WriteLine($"Lets compare this myStrings. Is it Equal? {Environment.NewLine}{ms.myEquals(ms2)}");
+            Console.WriteLine($"Lets compare this myStrings via overrde bool Equals(obj). Is it Equal? {Environment.NewLine}{ms.Equals(ms2)}");
             Console.WriteLine($"Lets concat them");
             ms.Concat(ms2).Print();
             Console.WriteLine($"Convert ms to Char Array");

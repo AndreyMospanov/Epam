@@ -4,9 +4,7 @@
 Написать свой собственный класс MyString, описывающий строку как массив символов.
 Реализовать для этого класса типовые операции (сравнение, конкатенация, поиск символов,
 конвертация из/в массив символов, ...).*/
-
-//dotpeek посмотреть Лист.
-// Заменить Equals на Equals из object (ovveride)
+ 
 namespace _2._4_My_String
 {
     class MyString
@@ -27,7 +25,7 @@ namespace _2._4_My_String
             this.data = Console.ReadLine().ToCharArray();
         }
 
-        public bool Equals(MyString comparedString)
+        public bool myEquals(MyString comparedString)
         {
             if(this.data.Length != comparedString.data.Length)
             {
@@ -42,6 +40,24 @@ namespace _2._4_My_String
             }
             return true;
         }
+
+        public override bool Equals(object obj)
+        {            
+            if (obj is MyString)
+            {
+                MyString temp = obj as MyString;
+                for (int i = 0; i < data.Length; i++)
+                {
+                    if (this.data[i] != temp.data[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
         public MyString Concat(MyString summand)
         {
             char[] newMyString = new char[this.data.Length + summand.data.Length];
