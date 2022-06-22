@@ -97,5 +97,10 @@ namespace _2._4_My_String
             }
             Console.WriteLine($"{Environment.NewLine}");
         }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(_data, data);
+        }
     }
 }
