@@ -7,7 +7,8 @@ namespace _2._3_User
         static void Main(string[] args)
         {
             User user = new User();
-            
+            user.ConsoleCreate();
+            user.ToString();            
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 /*2.3. USER
 Написать класс User, описывающий человека (Фамилия, Имя, Отчество, Дата рождения, Возраст).
 Написать программу, демонстрирующую использование этого класса.*/
+
 namespace _2._3_User
 {
     public class User
@@ -70,6 +71,11 @@ namespace _2._3_User
         }       
         public User()
         {
+            
+        }
+
+        public void ConsoleCreate()
+        {
             Console.WriteLine("Enter surname");
             this.surName = Console.ReadLine();
             Console.WriteLine("Enter name");
@@ -77,7 +83,6 @@ namespace _2._3_User
             Console.WriteLine("Enter fathers name");
             this.fathersName = Console.ReadLine();
             birthDate = SetBirthDay();            
-            Console.WriteLine(this.ToString());
         }
     }
 }
