@@ -7,6 +7,8 @@ namespace _2._6_Ring
         static void Main(string[] args)
         {
             Ring myRing = new Ring();
+            myRing.ConsoleCreate();
+            Console.WriteLine(myRing.ToString()); 
         }
     }
 }

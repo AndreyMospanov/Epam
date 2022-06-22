@@ -18,10 +18,16 @@ namespace _2._1_Round
         public Round(string name)
         {
             this.name = name;
+            this.x = 0;
+            this.y = 0;
+            this.radius = 1;
         }
         public Round()
         {
-            
+            this.name = "no name";
+            this.x = 0;
+            this.y = 0;
+            this.radius = 1;
         }
         public string name
         {

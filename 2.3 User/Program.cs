@@ -8,7 +8,7 @@ namespace _2._3_User
         {
             User user = new User();
             user.ConsoleCreate();
-            user.ToString();            
+            Console.WriteLine(user.ToString());          
         }
     }
 }

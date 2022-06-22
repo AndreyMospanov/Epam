@@ -6,26 +6,31 @@ using _2._1_Round;
 внешней и внутренней окружностей. Обеспечить нахождение класса в заведомо корректном
 состоянии.*/
 
-//Переделать на агрегацию с двумя Rounds////
-
 namespace _2._6_Ring
 {
-    class Ring : Round
+    class Ring
     {
-        private double _innerRadius;
 
-        public double InnerRadius { get => _innerRadius; set => _innerRadius = value; }
+        private Round _inner;
+        private Round _outter;
+        private string _name;
+
+        public string name { get => _name; set => _name = value; }
+        public Round inner { get => _inner; set => _inner = value; }
+        public Round outter { get => _outter; set => _outter = value; }
+        
+
         public double RingArea()
         {
-            return this.area(radius) - this.area(InnerRadius);
+            return outter.area(outter.radius) - inner.area(inner.radius);
         }
-        public override double roundLength()
+        public  double roundLength()
         {
-            return 3.14 * Math.Pow(radius, 2) + 3.14 * Math.Pow(InnerRadius, 2); 
+            return 3.14 * Math.Pow(outter.radius, 2) + 3.14 * Math.Pow(inner.radius, 2); 
         }
         public override string ToString()
-        {
-            return $"Ring {this.name} with coordinates = {this.x}, {this.y}; outer radius = {this.radius}, inner radius = {this.InnerRadius}, {Environment.NewLine}rounds length = {this.roundLength().ToString("F2")}, round area = {this.RingArea().ToString("F2")}";
+        {            
+            return $"Ring {this.name} with coordinates = {inner.x}, {inner.y}; outter radius = {outter.radius}, inner radius = {inner.radius}, {Environment.NewLine}rounds length = {this.roundLength().ToString("F2")}, ring area = {this.RingArea().ToString("F2")}";
         }
         public double EnterCorrectNum()
         {
@@ -61,16 +66,22 @@ namespace _2._6_Ring
         }
         public Ring()
         {
+            inner = new Round();
+            outter = new Round();
+            this.name = "no name";
+        }
+
+        public void ConsoleCreate()
+        {            
             Console.WriteLine("Enter Name of Ring");
             name = Console.ReadLine();
             Console.WriteLine("Enter Coordinates, x & y:");
-            x = EnterCorrectNum();
-            y = EnterCorrectNum();
+            inner.x = EnterCorrectNum();
+            inner.y = EnterCorrectNum();
             Console.WriteLine("Enter inner radius");
-            InnerRadius = EnterCorrectNumPositive();
+            inner.radius = EnterCorrectNumPositive();
             Console.WriteLine("Enter outter radius");
-            radius = EnterCorrectNumPositive();
-            Console.WriteLine(this.ToString());
+            outter.radius = EnterCorrectNumPositive();
         }
     }
 }

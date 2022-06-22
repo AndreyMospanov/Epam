@@ -8,7 +8,7 @@ namespace _2._5_Employee
         {
             Employee Director = new Employee();
             Director.ConsoleCreate();
-            Director.ToString();
+            Console.WriteLine(Director.ToString()); 
         }
     }
 }
