@@ -74,7 +74,7 @@ namespace _2._3_User
             
         }
 
-        public void ConsoleCreate()
+        public virtual void ConsoleCreate()
         {
             Console.WriteLine("Enter surname");
             this.surName = Console.ReadLine();

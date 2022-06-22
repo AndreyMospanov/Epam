@@ -7,6 +7,8 @@ namespace _2._5_Employee
         static void Main(string[] args)
         {
             Employee Director = new Employee();
+            Director.ConsoleCreate();
+            Director.ToString();
         }
     }
 }

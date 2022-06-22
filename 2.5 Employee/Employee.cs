@@ -21,6 +21,11 @@ namespace _2._5_Employee
         }
         public Employee() 
         {
+            
+        }
+        public override void ConsoleCreate()
+        {
+            base.ConsoleCreate();
             Console.WriteLine("Enter position");
             Position = Console.ReadLine();
             int start = 0;
@@ -28,12 +33,12 @@ namespace _2._5_Employee
             {
                 Console.WriteLine("Enter year of job start");
                 int.TryParse(Console.ReadLine(), out start);
-                if(start < 1960)
-                {                    
+                if (start < 1960)
+                {
                     throw new Exception();
                 }
             }
-            catch(Exception) when (start < 1960)
+            catch (Exception) when (start < 1960)
             {
                 Console.WriteLine("may be you print wrong date");
             }
@@ -42,7 +47,6 @@ namespace _2._5_Employee
                 throw;
             }
             Expirience = CalculateExpirience(start);
-            Console.WriteLine(this.ToString());
         }
         public override string ToString()
         { 
